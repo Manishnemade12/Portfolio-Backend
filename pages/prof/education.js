@@ -106,7 +106,7 @@ export default function Education() {
                                     type="text"
                                     value={edu.school}
                                     onChange={(e) => handleInputChange('school', index, e.target.value)}
-                                    required
+                                    // required
                                 />
                             </div>
                             <div className="input-group">

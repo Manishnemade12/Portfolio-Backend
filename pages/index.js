@@ -14,6 +14,7 @@ export default function Home() {
   const [shopData, setShopData] = useState([]);
   const [photosData, setPhotosData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [contactData, setContactData] = useState([]);
 
   const options = {
     responsive: true,
@@ -27,6 +28,23 @@ export default function Home() {
       text: 'Blogs Created Monthly By Year',
     }
   };
+
+  useEffect(() => {
+    const fetchContacts = async () => {
+        try {
+          const responseContacts = await fetch('/api/contacts');
+            if (!responseContacts.ok) {
+                throw new Error('Failed to fetch contacts');
+            }
+            const data = await responseContacts.json(); // parse the response as JSON
+            setContactData(data); // set the fetched contacts to state
+        } catch (error) {
+            console.error('Error fetching contacts:', error);
+        }
+    };
+
+    fetchContacts(); // Call the fetch function when the component mounts
+}, []); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -113,9 +131,13 @@ export default function Home() {
             <span>{projectData.filter(dat => dat.status === 'publish').length}</span>
           </div>
           <div className="four_card">
+            <h2>Contacts Requests</h2>
+            <span>{contactData.length}</span>
+          </div>
+          {/* <div className="four_card">
             <h2>Total Products</h2>
             <span>{shopData.filter(dat => dat.status === 'publish').length}</span>
-          </div>
+          </div> */}
           <div className="four_card">
             <h2>Gallery Photos</h2>
             <span>{photosData.length}</span>

@@ -56,7 +56,7 @@ export default function Setting() {
                             {/* <Link href='/setting/edit'> */}
                                 <button>Update Profile</button>
                                 </Link>
-                                {console.log(alldata)}
+                                {/* {console.log(alldata)} */}
 
 
                             </div>

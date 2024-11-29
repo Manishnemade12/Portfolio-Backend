@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import LoginLayout from "@/components/LoginLayout";
 import { useSession, signOut  } from "next-auth/react";
+import { GrCloudComputer } from "react-icons/gr";
 
 export default function Aside({ HandleAsideOpen, asideOpen }) {
     const router = useRouter();
@@ -62,7 +63,23 @@ export default function Aside({ HandleAsideOpen, asideOpen }) {
                             </ul>
                         )}
                     </li>
-                    <li className={activeLink === '/shops' ? 'navactive flex-col flex-left' : 'flex-col flex-left'} onClick={() => handleLinkClick('/shops')}>
+
+                    <li className={activeLink === '/Skills' ? 'navactive flex-col flex-left' : 'flex-col flex-left'} onClick={() => handleLinkClick('/skills')}>
+                        <div className="flex gap-1">
+                        <GrCloudComputer />
+                            <span>Skills</span>
+                        </div>
+                        {activeLink === '/skills' && (
+                            <ul>
+                                <Link href='/skills'><li>All skills</li></Link>
+                                <Link href='/skills/addSkills'><li>Add skills</li></Link>
+                            </ul>
+                        )}
+                    </li>   
+
+
+                    {/* uncomment shops */}
+                    {/* <li className={activeLink === '/shops' ? 'navactive flex-col flex-left' : 'flex-col flex-left'} onClick={() => handleLinkClick('/shops')}>
                         <div className="flex gap-1">
                             <LuShoppingCart />
                             <span>Shops</span>
@@ -74,7 +91,7 @@ export default function Aside({ HandleAsideOpen, asideOpen }) {
                                 <Link href='/shops/draftshops'><li>Draft Products</li></Link>
                             </ul>
                         )}
-                    </li>
+                    </li> */}
                     <li className={activeLink === '/gallery' ? 'navactive flex-col flex-left' : 'flex-col flex-left'} onClick={() => handleLinkClick('/gallery')}>
                         <div className="flex gap-1">
                             <RiGalleryLine />
@@ -101,7 +118,7 @@ export default function Aside({ HandleAsideOpen, asideOpen }) {
                     </Link>
 
                 </ul>
-                <button onClick={() => signOut()} className="logoutbtn">Logout</button>
+                {/* <button onClick={() => signOut()} className="logoutbtn">Logout</button> */}
             </aside>
         </LoginLayout>
     );

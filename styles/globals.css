@@ -325,8 +325,14 @@ button {
 }
 
 .profilenav img {
-    width: 120px;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.profilenav img:hover {
+    transform: scale(1.05);
 }
 
 /* ********************************************** */
@@ -1038,7 +1044,7 @@ button {
 
 .leftprofile_details img {
     width: 100%;
-    height: 300px;
+    height: 250px;
     object-fit: contain;
 }
 
@@ -1935,18 +1941,35 @@ button {
 }
 
 /* Profile Form Styling */
+/* .Profilegpage1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    max-width: 7000px; 
+    background: #f9f9f9;
+    border-radius: 12px; 
+    padding: 30px;
+    box-sizing: border-box;
+    margin-bottom: 30px; 
+} */
+
 .Profilegpage1 {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
-    max-width: 7000px; /* Maximum width of form */
-    background: #f9f9f9; /* Light background color */
+    max-width: 7000px; /* Maximum width of the form */
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg'); /* Corrected Image Link */
+    background-size: cover; /* Image fit karegi */
+    background-position: center; /* Image center align hogi */
+    background-repeat: no-repeat; /* Image repeat nahi hogi */
     border-radius: 12px; /* Rounded corners */
     padding: 30px;
     box-sizing: border-box;
-    margin-bottom: 30px; /* Adding gap between Profilegpage and profile_details */
+    margin-bottom: 30px;
 }
+
 
 /* Profile Set Section */
 .profileSet {
@@ -1959,7 +1982,7 @@ button {
 .profileSet label {
     font-size: 18px;
     font-weight: bold;
-    color: #333;
+    color: #566ef7;
     margin-bottom: 8px; /* Space between label and input */
 }
 
@@ -1970,8 +1993,9 @@ button {
     padding: 12px;
     font-size: 16px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #1468ef;
     box-sizing: border-box;
+    /* background: #ac50bf; */
 }
 
 /* Textarea Styling */
@@ -2000,11 +2024,21 @@ button:hover {
 /* Profile Details Section Styling */
 .profile_details {
     width: 100%;
-    margin-top: 30px; /* Space between Profilegpage and profile_details */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    background-color: #ffffff;
-    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20200714/pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg');
+    background-position: center; /* Image ko center me align karega */
+    background-repeat: no-repeat; /* Image repeat nahi hogi */
+    border-radius: 50px;
     padding: 20px;
+}
+
+.profile_details label{
+ color: #566ef7;
+}
+
+.label-color h3 {
+    color: #566ef7;
 }
 
 /* Responsive Design */
@@ -2156,52 +2190,47 @@ button:hover {
     }
 }
 
-/* onother */
-/* .ERROR {
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: relative;
-    z-index: 1;
-}
-
-.fire-effect {
-    position: absolute;
-    top: -8px;
-    left: -8px;
-    right: -8px;
-    bottom: -8px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 140, 0, 0.3), transparent 160%);
-    background-size: 600% 600%;
-    animation: fireGlow 3s infinite alternate;
-    pointer-events: none;
-    z-index: 0;
-}
-
-@keyframes fireGlow {
-    0% { 
-        box-shadow: 0 0 10px 3px rgba(255, 69, 0, 0.8), 
-                    0 0 20px 10px rgba(255, 140, 0, 0.5);
-        transform: scale(1);
-    }
-    50% { 
-        box-shadow: 0 0 15px 7px rgba(255, 69, 0, 0.6), 
-                    0 0 30px 15px rgba(255, 140, 0, 0.3);
-        transform: scale(1.2);  
-    }
-    100% { 
-        box-shadow: 0 0 20px 10px rgba(255, 69, 0, 0.8), 
-                    0 0 40px 20px rgba(255, 140, 0, 0.5);
-        transform: scale(1.3); 
-    }
-}
-*/
 .save-profile{
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    gap: 15px;
+}
+
+.righhcontsbtn button {
+    margin-top: 40px;
+    border-radius: .25rem;
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 400;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    color: #fff;
+    -webkit-clip-path: polygon(0 0, 0 0, 100% 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%);
+    clip-path: polygon(0 0, 0 0, 100% 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 15px 100%, 0 100%);
+    height: 60px;
+    font-size: 1rem;
+    line-height: 14px;
+    letter-spacing: 1.2px;
+    transition: .2s .1s;
+    background-image: linear-gradient(to left, #6220fb 0%, #1c1c1c 51%, #6220fb 100%);
+    border: 0 solid;
+    background-size: 200%;
+    overflow: hidden;
+    background-position: 100%;
+}
+
+.righhcontsbtn button:hover {
+    cursor: pointer;
+    transition: background-image all .3s ease-in;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    background-position: -200%;
+}
+
+.one-line {
+    display: flex;
+    column-gap: 25px;
 }
 
 .save-profile button {
@@ -2254,11 +2283,10 @@ button:hover {
   }
   
   .education-form {
-    /* background-color: #ffffff; */
-    /* background-color: #797474; */
-    /* background-color: #d0499c; */
-    background-color: #d46e3b;
-    /* background-color: blanchedalmond; */
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/044/443/592/small/anime-landscape-with-a-field-and-clouds-video.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
     max-width: 700px;
     padding: 30px;
@@ -2285,7 +2313,7 @@ button:hover {
   .input-group label {
     font-size: 16px;
     font-weight: 500;
-    color: #555;
+    color: black;
     margin-bottom: 8px;
     display: block;
   }
@@ -2299,8 +2327,12 @@ button:hover {
     border-radius: 8px;
 /*   
     background-color:#7e6e66; */
-    background-color: #f9f9f9;
-    transition: border 0.3s ease-in-out;
+    background-color:#87cefa;
+    /* background-color: #4ec0ed; */
+    background-size: cover; /* Image ko poore container ke size me fit karega */
+    background-position: center; /* Image ko center align karega */
+    background-repeat: no-repeat
+    
   }
   
   .input-group input:focus,

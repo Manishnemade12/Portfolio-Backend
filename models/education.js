@@ -29,15 +29,15 @@ import mongoose from 'mongoose';
 const educationSchema = new mongoose.Schema({
     school: {
         type: String,
-        required: true
+        // required: true
     },
     educationDescription: {
         type: String,
-        required: true
+        // required: true
     },
     year: {
         type: String,  // Use String for flexible year formats like "2020-2024"
-        required: true
+        // required: true
     }
 }, { _id: false });  // Avoid creating an id for each education item
 

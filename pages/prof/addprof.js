@@ -64,7 +64,7 @@ export default function AddProfile() {
                     axios.post('/api/upload', formData).then(res => {
                         setProfile(oldProfile => ({
                             ...oldProfile,
-                            images: [ ...res.data.links]
+                            images: [...res.data.links]
                         }));
                     })
                 );
@@ -87,22 +87,22 @@ export default function AddProfile() {
         setProfile({ ...profile, images: updatedImages });
         toast.success('Image deleted successfully');
     };
-    
+
     return (
         <>
             <Head>
                 <title>{isEditing ? 'Edit Profile' : 'Create Profile'}</title>
             </Head>
-           
-            <div className='justifycenter'>
-            <div className='profiledetailsimage'>
-           <h1>Update Profile Details <img src={profile.images}/> </h1>
 
-            </div>
-            
+            <div className='justifycenter'>
+                <div className='profiledetailsimage'>
+                    <h1>Update Profile Details <img src={profile.images} /> </h1>
+
+                </div>
+
                 <form onSubmit={handleSubmit} className="Profilegpage1">
                     {/* Basic Profile Fields */}
-                  
+
                     <div className="profileSet">
                         <label>Name</label>
                         <input
@@ -143,7 +143,7 @@ export default function AddProfile() {
                     {/* Additional Profile Fields */}
                     {/* Image Upload Section */}
                     <div className='w-100 flex flex-col flex-left mb-2'>
-                        <label htmlFor='fileInput'><h3>Image for Profile Photo, used in multiple location on Personal Portal</h3></label>
+                        <label htmlFor='fileInput' className='label-color'><h3>Image for Profile Photo, used in multiple location on Personal Portal</h3></label>
                         <input
                             type='file'
                             id='fileInput'
@@ -162,24 +162,15 @@ export default function AddProfile() {
                         <div className='flex gap-m'>
                             <ReactSortable list={Array.isArray(profile.images) ? profile.images : []} setList={updateImagesOrder} animation={200} className='flex gap-1'>
                                 {profile.images?.map((link, index) => (
-                                    // <div key={link} className='uploadedimg'>
-                    
-                                    //     <img src={link} alt='image' className='ERROR' />
-
-                                 
-                                    //     <div className='deleteimg'>
-                                    //         <button onClick={() => handleDeleteImage(index)}><MdDeleteForever /></button>
-                                    //     </div>
-                                    // </div>
                                     <div key={link} className='uploadedimg'>
-    <div className='ERROR-container'>
-        <img src={link} alt='image' className='ERROR' />
-        <div className='fire-effect'></div>
-    </div>
-    <div className='deleteimg'>
-        <button onClick={() => handleDeleteImage(index)}><MdDeleteForever /></button>
-    </div>
-</div>
+                                        <div className='ERROR-container'>
+                                            <img src={link} alt='image' className='ERROR' />
+                                            <div className='fire-effect'></div>
+                                        </div>
+                                        <div className='deleteimg'>
+                                            <button onClick={() => handleDeleteImage(index)}><MdDeleteForever /></button>
+                                        </div>
+                                    </div>
 
 
                                 ))}
@@ -191,7 +182,7 @@ export default function AddProfile() {
                         <h1> Technical Stack Qualities</h1>
                     </div>
 
-<div className="profileSet">
+                    <div className="profileSet">
                         <label>Technical Stack title -1</label>
                         <input
                             type="text"
@@ -201,7 +192,7 @@ export default function AddProfile() {
                         />
                     </div>
 
-                    
+
                     <div className="profile_details">
                         <label>Technical Stack Description</label>
                         <textarea
@@ -209,7 +200,7 @@ export default function AddProfile() {
                             onChange={(e) => setProfile({ ...profile, work1Description: e.target.value })}
                         />
                     </div>
-                
+
                     <div className="profileSet">
                         <label>Technical Stack title -2</label>
                         <input
@@ -220,7 +211,7 @@ export default function AddProfile() {
                         />
                     </div>
 
-                    
+
                     <div className="profile_details">
                         <label>Technical Stack Description</label>
                         <textarea
@@ -228,7 +219,7 @@ export default function AddProfile() {
                             onChange={(e) => setProfile({ ...profile, work2Description: e.target.value })}
                         />
                     </div>
-                   
+
                     <div className="profileSet">
                         <label>Technical Stack title -3</label>
                         <input
@@ -239,7 +230,7 @@ export default function AddProfile() {
                         />
                     </div>
 
-                    
+
                     <div className="profile_details">
                         <label>Technical Stack Description</label>
                         <textarea
@@ -247,7 +238,7 @@ export default function AddProfile() {
                             onChange={(e) => setProfile({ ...profile, work3Description: e.target.value })}
                         />
                     </div>
-                 
+
                     <div className="profileSet">
                         <label>Technical Stack title -4</label>
                         <input
@@ -258,7 +249,7 @@ export default function AddProfile() {
                         />
                     </div>
 
-                    
+
                     <div className="profile_details">
                         <label>Technical Stack Description</label>
                         <textarea
@@ -267,9 +258,15 @@ export default function AddProfile() {
                         />
                     </div>
 
-                    <div className="save-profile">
+                        {/* <div className='one-line'> */}
+                    {/* <div className="save-profile"> */}
+                        {/* <button type="submit">Go Back</button>
+                        </div> */}
+                        <div className='righhcontsbtn'>
                         <button type="submit">Save Profile</button>
-                    </div>
+                        </div>
+                        {/* </div>    */}
+                    
                 </form>
             </div>
         </>
