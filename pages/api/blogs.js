@@ -1,6 +1,5 @@
 
-import Blog from "@/models/Blog"; // Ensure this path is correct
-// import Blog from "@/models/Blog"; // Ensure this path is correct
+import Blog from "@/models/Blog"; 
 import { mongooseConnect } from "@/lib/mongoose";
 
 export default async function handle(req, res) {

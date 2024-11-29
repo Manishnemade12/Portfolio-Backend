@@ -4,9 +4,6 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import { signOut } from "next-auth/react";
 import useFetchData from "@/hooks/useFetchData";
-import Dataloading from "@/components/Dataloading";
-import { RiDeleteBin6Fill } from "react-icons/ri";
-import { FaEdit } from "react-icons/fa";
 import Spinner from "@/components/Spinner";
 import { GiClick } from "react-icons/gi";
 

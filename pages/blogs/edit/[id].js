@@ -45,7 +45,7 @@ export default function EditBlog() {
                     <TbBrandBlogger /> <span>/</span> <span>Edit Blog</span>
                 </div>
             </div>
-            <div className="mt-3"> {/* Fixed syntax error here */}
+            <div className="mt-3"> 
                 {productInfo && (
                     <Blog {...productInfo} />
                 )}

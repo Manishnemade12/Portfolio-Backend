@@ -1,12 +1,9 @@
-
-// import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 export default function SignUp() {
     const [form, setForm] = useState({ email: '', password: '', confirmPassword: '' });
     const [error, setError] = useState('');
-    // const {data: session, status} = useSession()   
     const router = useRouter();
 
 

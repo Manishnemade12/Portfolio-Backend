@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 import toast from 'react-hot-toast';
 import Head from 'next/head';
-import Spinner from '@/components/Spinner';
 
 export default function Education() {
     const [profile, setProfile] = useState({
@@ -18,7 +17,7 @@ export default function Education() {
                 const response = await axios.get('/api/education');
                 if (response.data) {
                     setProfile(response.data);
-                    setIsEditing(true); // Set to PUT mode if profile data exists
+                    setIsEditing(true);
                 }
             } catch (error) {
                 console.error('Error fetching profile:', error);
@@ -58,44 +57,7 @@ export default function Education() {
                 <title>{isEditing ? 'Edit Education Details' : 'Create Education Details'}</title>
             </Head>
             <div className="justifycenter">
-                {/* <form onSubmit={handleSubmit} className="Profilegpage1">
-                    <h1>Education Details</h1>
-
-                    {profile.education.map((edu, index) => (
-                        <div key={index}>
-                            <div className="profileSet">
-                                <label>{`School - ${index + 1}`}</label>
-                                <input
-                                    type="text"
-                                    value={edu.school}
-                                    onChange={(e) => handleInputChange('school', index, e.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div className="profile_details">
-                                <label>Education Description</label>
-                                <textarea
-                                    value={edu.educationDescription}
-                                    onChange={(e) => handleInputChange('educationDescription', index, e.target.value)}
-                                />
-                            </div>
-                            <div className="profile_details">
-                                <label>Year</label>
-                                <input
-                                    type="text"
-                                    value={edu.year}
-                                    onChange={(e) => handleInputChange('year', index, e.target.value)}
-                                />
-                            </div>
-                        </div>
-                    ))}
-
-                    <div className="save-profile">
-                        <button type="submit">{isEditing ? 'Update Details' : 'Save Details'}</button>
-                    </div>
-                </form> */}
-
-<form onSubmit={handleSubmit} className="education-form">
+                <form onSubmit={handleSubmit} className="education-form">
                     <h1>Education Details </h1>
 
                     {profile.education.map((edu, index) => (
@@ -106,7 +68,7 @@ export default function Education() {
                                     type="text"
                                     value={edu.school}
                                     onChange={(e) => handleInputChange('school', index, e.target.value)}
-                                    // required
+                                // required
                                 />
                             </div>
                             <div className="input-group">

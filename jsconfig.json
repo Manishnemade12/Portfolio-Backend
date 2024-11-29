@@ -1,7 +1,10 @@
 {
   "compilerOptions": {
+    "baseUrl": ".", // Yeh project ke root ko reference banata hai
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"], // Yeh alias define karta hai
+      "@/models/*": ["models/*"], // `@/models` alias ko `models` folder se link karega
+      "@/components/*": ["components/*"] // Components folder ke liye alias
     }
   }
 }

@@ -1,9 +1,6 @@
 import { mongooseConnect } from '@/lib/mongoose';
 import cloudinary from 'cloudinary';
 import multiparty from 'multiparty';
-import { resolve } from 'styled-jsx/css';
-
-
 
 cloudinary.v2.config({
     cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
