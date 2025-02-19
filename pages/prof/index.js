@@ -6,6 +6,8 @@ import { signOut } from "next-auth/react";
 import useFetchData from "@/hooks/useFetchData";
 import Spinner from "@/components/Spinner";
 import { GiClick } from "react-icons/gi";
+import { BsInstagram } from "react-icons/bs";
+import { FaLinkedin } from "react-icons/fa";
 
 export default function Setting() {
     const { alldata, loading } = useFetchData('/api/prof');
@@ -61,17 +63,22 @@ export default function Setting() {
                     </div>
                     <div className="rightlogoutsec">
                         <div className="topaccountnbox topaccoutnbox">
-                            <h2 className="flex flex-sb"> Education Details<MdOutlineAccountCircle /> </h2>
+                            <h2 className="flex flex-sb"> Add More Details<MdOutlineAccountCircle /> </h2>
+                            <h6>click on below option for adding information</h6>
                             <hr />
                             <div className="flex flex-sb mt-1">
                             
                             <Link href='/prof/education'> <h3>Add Education Details <GiClick /></h3>
                            
                             </Link>
+                            
                                
                                 <button onClick={() => signOut()} className="">Log out</button>
                            
                             </div>
+                            <Link href='/prof/sociallink'> <h3>Add Social Links <FaLinkedin /></h3>
+                           
+                            </Link>
                         </div>
                     </div>
                 </div>

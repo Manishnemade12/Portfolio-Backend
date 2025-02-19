@@ -238,8 +238,6 @@ export default function Project(
                         <option value='Design System'>Design System</option>
                         <option value='Next Js'>Next Js</option>
                         <option value='Database'>Database</option>
-                        {/* <option value='E-commerce Site'>Kubernetes</option> */}
-                        <option value='Performance Evalution'>Performance Evalution</option>
 
                     </select>
                 </div>

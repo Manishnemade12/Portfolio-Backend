@@ -210,12 +210,13 @@ export default function Blog(
                     >
                         <option value='Node Js'>Node Js</option>
                         <option value='React Js'>React Js</option>
-                        <option value='Database'>Database</option>
-                        <option value='Kubernetes'>Kubernetes</option>
+                        <option value='Database'>Goals</option>
+                        <option value='Kubernetes'>Achievements</option>
                         <option value='Next Js'>Next Js</option>
                         <option value='Full Stack'>Full Stack</option>
                         <option value='Backend'>Backend</option>
                         <option value='Frontend'>Frontend</option>
+                        <option value='Frontend'>None</option>
                     </select>
                 </div>
 
@@ -313,6 +314,9 @@ export default function Blog(
                         <option value='Full Stack'>Full Stack</option>
                         <option value='Backend'>Backend</option>
                         <option value='Frontend'>Frontend</option>
+                        <option value='Achievements'>Achievements</option>
+                        <option value='Goals'>Goals</option>
+                        <option value='None'>None</option>
                     </select>
                 </div>
 
